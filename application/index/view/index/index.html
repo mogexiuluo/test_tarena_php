@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head id="Head1">
+	<title>点卡商城平台_游戏点卡充值网站_数字卡交易自动发货商城-人人数卡</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--ie兼容模式-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--国产浏览器高速模式（only 360）-->
+        <meta name="renderer" content="webkit" />
+<!--页面公用的css将主要放这里-->
+        <link href="__STATIC__/index/css/base.css" rel="stylesheet" type="text/css" />
+        <link href="__STATIC__/index/css/head.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="__STATIC__/index/css/bootstrap.min.css">
+	<script src="__STATIC__/index/js/jquery.min.js"></script>
+	<script src="__STATIC__/index/js/bootstrap.min.js"></script>
+      <!--[if lt IE 7]>
+      <style>
+      .section1_left{width:650px;float:left;height:470px;margin:0 0 10px 0;padding:15px 15px  6px  15px;display:inline-block;}
+      .section1_right{width:306px;float:left;margin:0 0 0 6px;height:480px;display:inline-block;}
+      .section1_right_top,.section1_right_bottom{padding:8px}
+      .section1_right_top{width:290px;margin-bottom:6px;height:260px;display:inline-block;}
+      .section1_right_bottom{width:290px;font-size:14px;color:#666;display:inline-block;height:193px;}
+      </style>
+      <![endif]-->
+<!--end 页面说明完毕-->
+<body class="page_index">
+{include file="public/head"}
+
+        </div>
+          <!--提醒部分-->
+    <div id="reminder" style="border:0px;background:none;color:#C50000;">
+    	警惕:以兼职、刷信誉、做任务、缴纳保证金为由的行为均为诈骗行为,虚拟类产品一经出售,概不退换!</div>
+<!--内容组-->
+        <div class=" all-width-center">      
+            <div class="banner ">
+				<div id="myCarousel" class="carousel slide">
+				<!-- 轮播（Carousel）指标 -->
+				<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<!-- 轮播（Carousel）项目 -->
+				<div class="carousel-inner">
+				<div class="item active">
+				<img src="__STATIC__/index/images/20180802122226.jpg" alt="First slide">
+				</div>
+				<div class="item">
+				<img src="__STATIC__/index/images/20180802122226.jpg" alt="Second slide">
+				</div>
+				<div class="item">
+				<img src="__STATIC__/index/images/20180802122226.jpg" alt="Third slide">
+				</div>
+				</div>
+				<!-- 轮播（Carousel）导航 -->
+	<!-- 轮播（Carousel）导航 -->
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+				</div>
+            </div>
+  <!-- 充值卡 -->          
+ <div class="section1  clear-both">
+ 	              <div class="section1_left">
+                    <p class="clear-both">
+                        <a href="#" class="index_button_1 float-left">盛大游戏</a>
+                    </p>
+                    <div class="clear-both">
+                        {volist name="sd" id="sd"}
+                        <span class="section1_goods">
+                        <a href="{:url('index/sheng/article',['id'=>$sd.id])}" ><img src="__STATIC__/index/game/{$sd.pic}"  /></a>
+                        <p class="section1_goods_p1">{$sd.name}</p>
+                         <p class="section1_goods_p2">会员价：<b><span>￥</span><span>{$sd.price}</span></b>
+                         	<br />
+                         	  实际价：<del><b><span>￥</span><span>{$sd.true_price}</span></b></del>
+                         </p>
+                        </span>
+                       {/volist}
+                 </div>
+                </div>
+              <div class="section1_left">
+                    <p class="clear-both">
+                        <a href="#" class="index_button_1 float-left">搜狐游戏</a>
+                    </p>
+                    <div class="clear-both">
+                        
+                       {volist name="sh" id="sh"}
+                        <span class="section1_goods">
+                        <a href="{:url('index/sou/article',['id'=>$sh.id])}" ><img src="__STATIC__/index/game/{$sh.pic}"  /></a>
+                        <p class="section1_goods_p1">{$sd.name}</p>
+                         <p class="section1_goods_p2">会员价：<b><span>￥</span><span>{$sh.price}</span></b>
+                         	<br />
+                         	  实际价：<del><b><span>￥</span><span>{$sh.true_price}</span></b></del>
+                         </p>
+                        </span>
+                       {/volist}
+                       
+                 </div>
+                </div>
+
+                          <div class="section1_left">
+                    <p class="clear-both">
+                        <a href="#"  class="index_button_1 float-left">网易游戏</a>
+                    </p>
+                    <div class="clear-both">
+                        
+                                               
+                       {volist name="wx" id="wx"}
+                        <span class="section1_goods">
+                        <a href="{:url('index/wang/article',['id'=>$wx.id])}" ><img src="__STATIC__/index/game/{$wx.pic}"  /></a>
+                        <p class="section1_goods_p1">{$wx.name}</p>
+                         <p class="section1_goods_p2">会员价：<b><span>￥</span><span>{$wx.price}</span></b>
+                         	<br />
+                         	  实际价：<del><b><span>￥</span><span>{$wx.true_price}</span></b></del>
+                         </p>
+                        </span>
+                       {/volist}
+                                            
+                       
+                 </div>
+                </div>
+
+            
+            </div>
+
+<!-- 商品列表 -->
+
+<!-- 商品列表 -->
+
+        </div>
+
+<!--页脚-->
+
+ 
+ {include file="public/footer"}
+<!-- 客服代码 -->
+{if condition="$Think.session.id gt 0"}
+{include file="public/kefu"}
+ {else}
+ 
+ {/if}
+
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>网站后台管理中心 - 管理员</title>
+    <meta name="Copyright" content="Douco Design." />
+    <link href="__STATIC__/admin/css/public.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/admin/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/global.js"></script>
+    <script>
+        function  check($id) {
+            if(confirm("您确定删除该用户？")){
+                window.location="{:url('admin/user/del')}?id="+$id;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="dcWrap">
+    {include file="public/header"}
+    <!-- dcHead 结束 -->
+    {include file="public/menu"}
+    <!-- 左侧菜单 结束 -->
+    <div id="dcMain">
+        <!-- 当前位置 -->
+        <div id="urHere">网站管理中心<b>></b><strong>网站管理员</strong> </div>   <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="{:url('admin/user/addmanger')}" class="actionBtn">添加管理员</a>网站管理员</h3>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th >编号</th>
+                <th >管理员名称</th>
+                <th >添加时间</th>
+                <th>操作</th>
+            </tr>
+            {volist name="user"  id="vo"}
+            <tr>
+                <td >{$vo.id}</td>
+                <td>{$vo['username']}</td>
+                <td >{$vo['addtime']}</td>
+                <td>
+                    <a class="btn btn-primary" href="{:url('admin/user/editor',['id'=>$vo.id])}">编辑</a> |
+                    <a class="btn btn-danger"href="#" onclick="check({$vo.id})">删除</a></td>
+            </tr>
+            {/volist}
+
+        </table>
+    </div>
+    </div>
+    <div class="clear"></div>
+{include file="public/footer"}
+    <div class="clear"></div> </div>
+</body>
+</html>

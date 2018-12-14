@@ -1,0 +1,102 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	点卡商城平台_游戏点卡充值网站_数字卡交易自动发货商城-人人数卡
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--ie兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--国产浏览器高速模式（only 360）-->
+    <meta name="renderer" content="webkit" />
+    <!--页面公用的css将主要放这里-->
+    <link href="__STATIC__/index/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/index/css/layer.css" rel="stylesheet" />
+    <link href="__STATIC__/index/css/login.css" rel="stylesheet" />
+    
+    <!--[if lt IE 7]>
+      <style>
+      .section1_left{width:650px;float:left;height:470px;margin:0 0 10px 0;padding:15px 15px  6px  15px;display:inline-block;}
+      .section1_right{width:306px;float:left;margin:0 0 0 6px;height:480px;display:inline-block;}
+      .section1_right_top,.section1_right_bottom{padding:8px}
+      .section1_right_top{width:290px;margin-bottom:6px;height:260px;display:inline-block;}
+      .section1_right_bottom{width:290px;font-size:14px;color:#666;display:inline-block;height:193px;}
+      </style>
+      <![endif]-->
+    <!--end 页面说明完毕-->
+<body>
+
+<div>
+ <!--网页头部 开始-->
+{include file="public/head_login"}    
+<form action="{:url('index/index/doLogin')}" method="post" onsubmit="return check();">
+<!--网页头部 结束-->
+ <div id="mainBody">
+    <div id="loginDiv" class="orangeDiv">
+          <div class="borderDiv">
+         <h1>会员登录</h1>
+<!-- 用户名 -->
+<div class="userDiv">
+      <input type="text" style="width: 326px !important; -moz-user-select:none;" 
+      	name="UserName"placeholder="会员账号" id="UserName"maxlength="30" tabindex="1"/>           
+</div>
+<!-- 密码-->
+<div class="pwdDiv">
+     <input type="password" name="Password" id="Password" placeholder="登录密码" maxlength="20"
+	 tabindex="2" />
+</div>
+<!-- 验证码 -->
+<div class="vaildcode" style="">
+    <input type="text" name="Captcha" placeholder="验证码" id="Captcha"maxlength="4" tabindex="3" class="illegal" />
+    <img id="captcha_img" src="{:captcha_src()}"  alt="" onclick="checkImg();" title="点击重新选择验证码"  />
+</div>
+<!-- 登录-->
+<div class="btn" style="border: 0px;">
+   <button type="submit" id="btnLogin" style="margin-bottom: 12px;" class="loginBtn">登　录</button>
+</div>
+<div class="yanz" style="margin-top: 0px;">
+	<div id="right_a" style="width:100%;">
+	<!--<a href="" style="display:initial;">忘记密码 ?</a>-->
+	<a id="RegisterNow" href="{:url('index/index/register')}"  style="display:inline-block;width:auto;">立即注册 ></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+ <!--网页尾部 开始-->
+ </form>
+ 
+{include file="public/footer"}    	
+ <!--网页尾部 结束-->
+</div>
+<script type="text/javascript">
+	  	function checkImg(){
+  		document.getElementById("captcha_img").src="{:captcha_src()}?rand=" + Math.random()
+  	}
+	  	function check(){
+	  //用户名
+    var username = document.getElementById("UserName").value;
+     if(username == ''){
+              alert("请填写用户名");
+              return false;
+     }
+    //密码
+    var Password = document.getElementById("Password").value;
+    if(Password == ''){
+       alert("请填写密码");
+              return false;
+    }
+    //验证码
+    var Captcha = document.getElementById("Captcha").value;
+    if(Captcha ==''){
+        alert("请填写验证码");
+              return false;
+    }	
+	  	
+	 } 	
+	  	
+  	
+</script>
+</body>
+</html>
+ 

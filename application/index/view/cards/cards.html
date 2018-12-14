@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head id="Head1">
+	<title>点卡商城平台_游戏点卡充值网站_数字卡交易自动发货商城-人人数卡</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--ie兼容模式-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--国产浏览器高速模式（only 360）-->
+        <meta name="renderer" content="webkit" />
+<!--页面公用的css将主要放这里-->
+        <link href="__STATIC__/index/css/base.css" rel="stylesheet" type="text/css" />
+        <link href="__STATIC__/index/css/head.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="__STATIC__/index/css/bootstrap.min.css">
+	<script src="__STATIC__/index/js/jquery.min.js"></script>
+	<script src="__STATIC__/index/js/bootstrap.min.js"></script>
+      <!--[if lt IE 7]>
+      <style>
+      .section1_left{width:650px;float:left;height:470px;margin:0 0 10px 0;padding:15px 15px  6px  15px;display:inline-block;}
+      .section1_right{width:306px;float:left;margin:0 0 0 6px;height:480px;display:inline-block;}
+      .section1_right_top,.section1_right_bottom{padding:8px}
+      .section1_right_top{width:290px;margin-bottom:6px;height:260px;display:inline-block;}
+      .section1_right_bottom{width:290px;font-size:14px;color:#666;display:inline-block;height:193px;}
+      </style>
+      <![endif]-->
+<!--end 页面说明完毕-->
+<body class="page_index">
+{include file="public/head"}
+
+        </div>
+          <!--提醒部分-->
+    <div id="reminder" style="border:0px;background:none;color:#C50000;">
+    	警惕:以兼职、刷信誉、做任务、缴纳保证金为由的行为均为诈骗行为,虚拟类产品一经出售,概不退换!</div>
+<!--内容组-->
+        <div class=" all-width-center">      
+
+  	
+  <!-- 充值卡 -->          
+ <div class="section1  clear-both">
+      <div class="section1_left">
+                    <p class="clear-both">
+                        <a href="#"  class="index_button_1 float-left">一卡通</a>
+                     
+                    </p>
+                    <div class="clear-both">
+                      {volist name="cards" id="cards"}
+                        <span class="section1_goods">
+                        <a href="{:url('index/cards/article',['id'=>$cards.id])}" >
+                        	<img src="__STATIC__/index/game/{$cards.pic}"  /></a>
+                        <p class="section1_goods_p1">{$cards.name}</p>
+                         <p class="section1_goods_p2">会员价：<b><span>￥</span><span>{$cards.price}</span></b>
+                         	<br />
+                         	  实际价：<del><b><span>￥</span><span>{$cards.true_price}</span></b></del>
+                         </p>
+                        </span>
+                       {/volist}
+                        
+                 </div>
+                </div>
+
+            
+            </div>
+
+<!-- 商品列表 -->
+
+<!-- 商品列表 -->
+
+        </div>
+
+<!--页脚-->
+
+ 
+ {include file="public/footer"}
+ 
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>网站后台管理中心 - 修改新闻 </title>
+    <meta name="Copyright" content="Douco Design." />
+    <link href="__STATIC__/admin/css/public.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/admin/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/global.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.autotextarea.js"></script>
+</head>
+<body>
+<div id="dcWrap">
+    {include file="public/header"}
+    <!-- dcHead 结束 -->
+    {include file="public/menu"}
+    <!-- 左侧菜单 结束 -->
+    <div id="dcMain">
+        <!-- 当前位置 -->
+        <div id="urHere">网站管理中心<b>></b><strong>修改新闻</strong> </div>   <div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="{:url('admin/news/index')}" class="actionBtn">新闻列表</a>修改新闻</h3>
+        <form action="{:url('admin/news/editor')}" method="post" enctype="multipart/form-data">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td width="90" align="right">新闻标题</td>
+                    <td>
+                        <input type="text" name="title" value="{$info.title}" value="" size="80" class="inpMain" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">新闻来源</td>
+                    <td>
+                        <input type="text" name="url" value="{$info.url}" value="" size="80" class="inpMain" />
+                    </td>
+                </tr>
+                <tr>
+                    <td  width="90" align="right">新闻图片</td>
+                    <td><input type="file" name="img"> <img src="__STATIC__/{$info.imagepath}" width="100" height="50" alt=""> </td>
+                </tr>
+
+                <tr>
+                    <td align="right" valign="top">新闻描述</td>
+                    <td>
+                        <script id="container" name="myEditor" type="text/plain" >{$info.content}</script>
+                        <script type="text/javascript" src="__STATIC__/admin/ueditor/ueditor.config.js"></script>
+                        <script type="text/javascript" src="__STATIC__/admin/ueditor/ueditor.all.js"></script>
+                        <script type="text/javascript">
+                            var ue = UE.getEditor('container',{
+                                wordCount:true, //关闭字数统计
+                                elementPathEnabled:false,//关闭elementPath
+                                initialFrameHeight: 450,
+                                initialFrameWidth: 980
+                            });
+                        </script>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="hidden" name="id" value="{$info.id}">
+                        <input class="btn" type="submit" value="提交" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </div>
+    <div class="clear"></div>
+    {include file="public/footer"}
+    <div class="clear"></div> </div>
+
+</body>
+</html>

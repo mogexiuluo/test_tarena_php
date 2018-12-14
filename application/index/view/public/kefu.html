@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在线客服代码</title>
+	<link rel="stylesheet" href="__STATIC__/index/kefu/css/style.css">
+</head>
+<body>
+
+	<!-- 代码部分begin -->
+	<div id="lanren">
+		<div class="kfleft" title="点击查看联系方式"></div>
+		<ul>
+			<li><a rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"  target="_blank"></a></li>
+			<li><a rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"  target="_blank"></a></li>
+			<li><a rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes" target="_blank"></a></li>
+
+		</ul>
+	</div>
+	<script src="__STATIC__/index/kefu/js/jQuery.js"></script>
+	<script>
+		$(function(){
+			$(".kfleft").on("click",function(){
+				var target = $("#lanren");
+				var distance = target.css("right");
+				if (distance == '0px'){
+					target.animate({right:-80}, 200);
+				} else {
+					target.animate({right:0}, 200);
+				}
+			});
+		})
+	</script>
+	<!-- 代码部分end -->
+</body>
+</html>

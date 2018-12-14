@@ -1,0 +1,34 @@
+<!--页头-->
+<div class="header">
+<div class="header_top all-width-center">
+ <p id="top_not_login" class="float-right" style="height: 14px; line-height: 14px;margin-top: 8px;">
+
+        {if condition="$Think.session.id gt 0"}
+                欢迎,&nbsp;&nbsp;<span style="color:red">{$Think.session.UserName}</span> &nbsp;&nbsp;来到人人数卡！ 
+        <a href="{:url('index/index/logout')}" class="bl_css hover">退出</a>
+        {else}
+        欢迎来到人人数卡！ 
+        <a href="{:url('index/index/login')}"  class="bl_css hover">登录</a>
+        <a href="{:url('index/index/register')}" class="bl_css hover">注册</a>
+        {/if}
+
+   
+ 
+ 
+ </p>
+</div>
+
+<!--页头logo那个位置-->
+<div class="header_logo all-width-center">
+    <a href="{:url('index/index/index')}" class="float-left" style="font-size: 45px;position: absolute;margin-top: 18px;"> 购卡之家</a>
+</div>
+<!--页头的导航部分-->
+<div class="header_nav all-width-center">
+    <ul id="memu">
+        <li><a href="{:url('index/index/index')}" id="header_nav_a_hover1">商城首页</a></li>
+        <li><a href="{:url('index/index/game')}" >充值卡</a></li>
+        <li><a href="{:url('index/cards/cards')}" >游戏一卡通</a></li>
+        <li><a href="{:url('index/index/contact')}" >联系我们</a></li>
+        <li><a href="{:url('index/index/shengming')}" >网站声明</a></li>
+    </ul>
+</div>

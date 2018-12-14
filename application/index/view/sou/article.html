@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head id="Head1">
+	<title>点卡商城平台_游戏点卡充值网站_数字卡交易自动发货商城-人人数卡</title>
+<meta charset="utf-8" />
+    <!--ie兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <!--国产浏览器高速模式（only 360）-->
+    <meta name="renderer" content="webkit" />
+    <!--页面公用的css将主要放这里-->
+    <link href="__STATIC__/index/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/index/css/layer.css" rel="stylesheet" />
+    <link href="__STATIC__/index/css/layer.ext.css" rel="stylesheet" />
+    <link href="__STATIC__/index/css/article.css" rel="stylesheet" />
+    
+    <!--[if lt IE 7]>
+      <style>
+      .section1_left{width:650px;float:left;height:470px;margin:0 0 10px 0;padding:15px 15px  6px  15px;display:inline-block;}
+      .section1_right{width:306px;float:left;margin:0 0 0 6px;height:480px;display:inline-block;}
+      .section1_right_top,.section1_right_bottom{padding:8px}
+      .section1_right_top{width:290px;margin-bottom:6px;height:260px;display:inline-block;}
+      .section1_right_bottom{width:290px;font-size:14px;color:#666;display:inline-block;height:193px;}
+      </style>
+      <![endif]-->
+    <!--end 页面说明完毕-->
+
+<body class="page_index">
+{include file="public/head_login"}
+        <!--内容组-->
+        <input name="txtpay" type="hidden" id="txtpay" />
+        <div class="content all-width-center page_contact_content1">
+<div id="proshow">
+      <div class="pay_introduction">
+            <div class="pay_introduction_left">
+                <a href="#">
+                            <img id="Image1"  src="__STATIC__/index/game/{$info.pic}" border="0" 
+                            	style="width: 230px; height: 150px;" /></a>
+                    </div>
+                    <div class="pay_introduction_right">
+                        <h2><b><span id="sp_title">{$info.name}</span></b></h2>
+                    <p class="pay_introduction_right_p1 pay_introduction_right_p ">
+                                                           购买价格：<b>￥<span id="member_price">{$info.true_price}</span>元</b>
+                        </p>
+                    <p class="pay_introduction_right_p1 pay_introduction_right_p">
+                       <span style="color: #F00">会员价格：</span><b>￥<span id="Label1">{$info.price}</span>元</b></p>
+
+                        <style type="text/css">
+                            .cs_a a:hover {
+                                color: #F00;
+                            }
+                        </style>
+					<p id="CamiNumCheck" class="pay_introduction_right_p"> 数量：
+						<select name="payNumber" id="payNumber">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+					
+					</select>
+					                        </p>
+
+
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+                <div id="payDiv" class="clearFix">
+                    <div>
+    
+                            <input type="submit" name="submit" onclick="jump();"value="确定"  id="submit" class="button_4" />
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+    <!--页脚-->
+{include file="public/footer"}
+
+</body>
+<script type="text/javascript">
+	function jump(){
+		{if condition="$Think.session.id gt 0"}
+		alert('请联系客服')
+		window.location.href = "{:url('index/index/index')}"
+		{else}
+		alert("请先登录")
+		window.location.href = "{:url('index/index/login')}"
+		{/if}	
+	}
+	
+	
+</script>
+</html>

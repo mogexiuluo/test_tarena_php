@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网站后台-登录页面</title>
+<link href="__STATIC__/admin/login/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div style="height:20px;"></div>
+
+<div class="main">
+  <div class="denglu">
+    <div class="text" style="font-size:13px;"></div>
+    <div class="dlk">
+    <form action="{:url('admin/login/dologin')}" method="post">
+      <table width="292" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="76" colspan="3"></td>
+        </tr>
+        <tr>
+          <td width="65" style="font-size:14px;">用户名</td>
+          <td colspan="2"><input name="user" type="text" class="dlinput" /></td>
+        </tr>
+        <tr>
+          <td height="16" colspan="3"></td>
+        </tr>
+        <tr>
+          <td>登录密码</td>
+          <td colspan="2"><input name="pwd" type="password" class="dlinput" /></td>
+        </tr>
+        <tr>
+          <td height="16" colspan="3"></td>
+        </tr>
+        <tr>
+          <td>验证码</td>
+          <td width="100"><input name="captcha" type="text" class="dlinput" style="width:90px;" maxlength="4" /></td>
+          <td width="127"><img src="{:captcha_src()}" onclick="checkImg()" style="cursor: pointer" title="点击我刷新" id="captcha" width="122" height="35" /></td>
+        </tr>
+        <tr>
+          <td height="16" colspan="3"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="2"><input type="submit" value="登 录" class="loginbtn" /></td>
+        </tr>
+
+      </table>
+    </form>
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">Copyright &copy; 2018 All Rights Reserved　版权所有</div>
+
+</body>
+<script type="text/javascript">
+  function checkImg(){
+    var img = document.getElementById("captcha")
+    img.src = "{:captcha_src()}?rand="+Math.random()
+  }
+</script>
+</html>

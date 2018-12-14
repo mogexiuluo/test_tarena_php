@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>武昌中心网站后台管理中心 -添加管理员 </title>
+    <meta name="Copyright" content="Douco Design." />
+    <link href="__STATIC__/admin/css/public.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/admin/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/global.js"></script>
+</head>
+<body>
+<div id="dcWrap">
+    {include file="public/header"}
+    <!-- dcHead 结束 -->
+    {include file="public/menu"}
+    <!-- 左侧菜单 结束 -->
+    <div id="dcMain">
+        <!-- 当前位置 -->
+        <div id="urHere">网站管理中心<b>></b><strong>网站管理员</strong> </div>   <div id="manager" class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
+        <h3><a href="{:url('admin/user/index')}" class="actionBtn">返回列表</a>修改网站管理员</h3>
+        <form action="{:url('admin/user/editor')}" method="post">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>管理员名称</td>
+                    <td>
+                        <input type="text" name="user" size="40" value="{$info.username}" class="inpMain"  required/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td >密码</td>
+                    <td>
+                        <input type="password" name="password"value="{$info.password}"  class="inpMain" required/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="hidden" name="id" value="{$info.id}" />
+                        <input type="submit" name="submit" class="btn" value="提交" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </div>
+    <div class="clear"></div>
+    {include file="public/footer"}
+    <div class="clear"></div> </div>
+</body>
+</html>
